@@ -19,7 +19,7 @@ import {
   NewsContainer,
   NewsVideoContainer,
 } from "../../constants/components/utilities";
-import { gsdbloading, bank, brain, agreement } from "../../constants/data";
+import { msloading, bank, brain, agreement } from "../../constants/data";
 import { FaTwitter, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import { AiFillInstagram, AiFillFacebook } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
@@ -92,7 +92,7 @@ export default function Home() {
               alignItems="center"
               justifyContent={"center"}
             >
-              <Image src={gsdbloading} alt="gsdb icon png" draggable="false" />
+              <Image src={msloading} alt="ms icon png" draggable="false" />
             </Box>
             <chakra.h3
               fontFamily={"Poppins.black"}
@@ -112,7 +112,7 @@ export default function Home() {
             <chakra.p
               mb={6}
               fontSize={["14px", "14px", "15px", "15px", "15px", "20px"]}
-              color="#AAAAAA"
+              color="#2C2B2B"
               whiteSpace={["normal", "normal", "pre-line", "pre-line"]}
               fontFamily={"Poppins"}
             >
@@ -565,11 +565,11 @@ The GLSDB-team of senior executive consultants is able to advise you on project 
               whileHover={{
                 scale: 1.1,
               }}
-              backgroundColor={"#22C086"}
+              backgroundColor={"#D74848"}
               _focus={{ border: "none" }}
-              _focusWithin={{ backgroundColor: "#22C086" }}
+              _focusWithin={{ backgroundColor: "#D74848" }}
               _hover={{
-                backgroundColor: "#22C086",
+                backgroundColor: "#D74848",
                 cursor: "pointer",
               }}
               flexDirection={"row"}
@@ -588,11 +588,11 @@ The GLSDB-team of senior executive consultants is able to advise you on project 
               whileHover={{
                 scale: 1.1,
               }}
-              backgroundColor={"#22C086"}
+              backgroundColor={"#D74848"}
               _focus={{ border: "none" }}
-              _focusWithin={{ backgroundColor: "#22C086" }}
+              _focusWithin={{ backgroundColor: "#D74848" }}
               _hover={{
-                backgroundColor: "#22C086",
+                backgroundColor: "#D74848",
                 cursor: "pointer",
               }}
               flexDirection={"row"}
@@ -611,11 +611,11 @@ The GLSDB-team of senior executive consultants is able to advise you on project 
               whileHover={{
                 scale: 1.1,
               }}
-              backgroundColor={"#22C086"}
+              backgroundColor={"#D74848"}
               _focus={{ border: "none" }}
-              _focusWithin={{ backgroundColor: "#22C086" }}
+              _focusWithin={{ backgroundColor: "#D74848" }}
               _hover={{
-                backgroundColor: "#22C086",
+                backgroundColor: "#D74848",
                 cursor: "pointer",
               }}
               flexDirection={"row"}

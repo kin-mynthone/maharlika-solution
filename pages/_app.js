@@ -68,7 +68,7 @@ function MyApp({ Component, pageProps }) {
 
         <Component {...pageProps} />
         {!getshowStartup && <Footer />}
-        <NextNProgress height={5} color="#22C086" />
+        <NextNProgress height={5} color="#D74848" />
       </Flex>
     </ChakraProvider>
   );

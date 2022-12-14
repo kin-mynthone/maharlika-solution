@@ -1,6 +1,6 @@
 import { Flex, useColorModeValue, Box } from "@chakra-ui/react";
 import Image from "next/image";
-import { gsdbloading } from "../constants/data";
+import { msloading } from "../constants/data";
 import { MotionFlex } from "../constants/components/motion";
 import { startUpStore } from "../store/start_up";
 import "@fontsource/poppins";
@@ -14,7 +14,7 @@ export default function Loading() {
   const showKlogo = startUpStore((state) => state.show_klogo);
   const setshowStartup = startUpStore((state) => state.set_show_startup);
   const { height, width } = useWindowSize();
-  const klogoMode = useColorModeValue(gsdbloading, gsdbloading);
+  const klogoMode = useColorModeValue(msloading, msloading);
 
   useEffect(() => {
     if (showDelay >= 0) {
@@ -48,7 +48,7 @@ export default function Loading() {
           height={[70, 90, 90, 90, 90, 90]}
           width={[83, 103, 103, 103, 103, 103]}
         >
-          <Image src={klogoMode} alt="gsdb icon png" draggable="false" />
+          <Image src={klogoMode} alt="ms icon png" draggable="false" />
         </Box>
       </MotionFlex>
     </Flex>

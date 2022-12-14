@@ -19,19 +19,21 @@ import { HiMoon, HiSun } from "react-icons/hi";
 import { AiOutlineMenu } from "react-icons/ai";
 import { chakra } from "@chakra-ui/react";
 import { default as NextLink } from "next/link";
-import { gsdblogo } from "../../../constants/data";
+import { mslogo } from "../../../constants/data";
 import { pagesStore } from "../../../store/pages";
 import { Link } from "react-scroll/modules";
 import "@fontsource/poppins";
 import { useWindowSize } from "../../../custom_hooks";
 
+import { IoIosRocket } from "react-icons/io";
+
 export default function NavigationBar() {
   const mobileNav = useDisclosure();
-  const cl = useColorModeValue("#474747", "#22C086");
+  const cl = useColorModeValue("#474747", "#D74848");
   const mode = useColorModeValue("#474747", "#CDCDCD");
   const { toggleColorMode: toggleMode } = useColorMode();
   const SwitchIcon = useColorModeValue(HiMoon, HiSun);
-  const klogoMode = useColorModeValue(gsdblogo, gsdblogo);
+  const klogoMode = useColorModeValue(mslogo, mslogo);
   const { height, width } = useWindowSize();
 
   const ref = React.useRef(null);
@@ -74,108 +76,24 @@ export default function NavigationBar() {
         }}
         onClick={() => {
           Router.push({
-            pathname: "/about_us",
+            pathname: "/home",
           });
         }}
       >
         <Text
           fontWeight={getPageIndex == 1 ? "black" : "thin"}
           fontSize="14px"
-          color={getPageIndex == 1 ? "#22C086" : "#474747"}
+          color={getPageIndex == 1 ? "#D74848" : "#474747"}
           _dark={{
-            color: getPageIndex == 1 ? "#22C086" : "gray",
+            color: getPageIndex == 1 ? "#D74848" : "gray",
           }}
           _hover={{
-            color: "#22C086",
+            color: "#D74848",
           }}
         >
-          About us
+          Home
         </Text>
       </MotionButton>
-
-      <Link
-        activeClass="active"
-        to="ourgoal"
-        spy={true}
-        smooth={true}
-        offset={0}
-        duration={1000}
-      >
-        <MotionButton
-          backgroundColor={"transparent"}
-          _focus={{ border: "none" }}
-          _focusWithin={{ backgroundColor: "transparent" }}
-          _hover={{
-            backgroundColor: "transparent",
-            cursor: "pointer",
-          }}
-          flexDirection={"row"}
-          whileTap={{
-            scale: 0.9,
-          }}
-          whileHover={{
-            scale: 1.1,
-            color: cl,
-          }}
-          onClick={null} //update this
-        >
-          <Text
-            fontWeight={getPageIndex == 2 ? "black" : "thin"}
-            fontSize="14px"
-            color={getPageIndex == 2 ? "#22C086" : "#474747"}
-            _dark={{
-              color: getPageIndex == 2 ? "#22C086" : "gray",
-            }}
-            _hover={{
-              color: "#22C086",
-            }}
-          >
-            Our goal
-          </Text>
-        </MotionButton>
-      </Link>
-      <Link
-        activeClass="active"
-        to="workwithus"
-        spy={true}
-        smooth={true}
-        offset={0}
-        duration={1000}
-      >
-        <MotionButton
-          backgroundColor={"transparent"}
-          _focus={{ border: "none" }}
-          _focusWithin={{ backgroundColor: "transparent" }}
-          _hover={{
-            backgroundColor: "transparent",
-            cursor: "pointer",
-          }}
-          flexDirection={"row"}
-          whileTap={{
-            scale: 0.9,
-          }}
-          whileHover={{
-            scale: 1.1,
-            color: cl,
-          }}
-          onClick={null} //update this
-        >
-          <Text
-            fontWeight={getPageIndex == 3 ? "black" : "thin"}
-            fontSize="14px"
-            color={getPageIndex == 3 ? "#22C086" : "#474747"}
-            _dark={{
-              color: getPageIndex == 3 ? "#22C086" : "gray",
-            }}
-            _hover={{
-              color: "#22C086",
-            }}
-          >
-            Work with us
-          </Text>
-        </MotionButton>
-      </Link>
-
       <MotionButton
         backgroundColor={"transparent"}
         _focus={{ border: "none" }}
@@ -194,107 +112,132 @@ export default function NavigationBar() {
         }}
         onClick={() => {
           Router.push({
-            pathname: "/news",
+            pathname: "/services",
           });
         }}
       >
         <Text
-          fontWeight={getPageIndex == 2 ? "black" : "thin"}
+          fontWeight={getPageIndex == 1 ? "black" : "thin"}
           fontSize="14px"
-          color={getPageIndex == 2 ? "#22C086" : "#474747"}
+          color={getPageIndex == 1 ? "#D74848" : "#474747"}
           _dark={{
-            color: getPageIndex == 2 ? "#22C086" : "gray",
+            color: getPageIndex == 1 ? "#D74848" : "gray",
           }}
           _hover={{
-            color: "#22C086",
+            color: "#D74848",
           }}
         >
-          News
+          Services
         </Text>
       </MotionButton>
-
-      <Link
-        activeClass="active"
-        to="tools"
-        spy={true}
-        smooth={true}
-        offset={-10}
-        duration={1000}
+      <MotionButton
+        backgroundColor={"transparent"}
+        _focus={{ border: "none" }}
+        _focusWithin={{ backgroundColor: "transparent" }}
+        _hover={{
+          backgroundColor: "transparent",
+          cursor: "pointer",
+        }}
+        flexDirection={"row"}
+        whileTap={{
+          scale: 0.9,
+        }}
+        whileHover={{
+          scale: 1.1,
+          color: cl,
+        }}
+        onClick={() => {
+          Router.push({
+            pathname: "/tools",
+          });
+        }}
       >
-        <MotionButton
-          backgroundColor={"transparent"}
-          _focus={{ border: "none" }}
-          _focusWithin={{ backgroundColor: "transparent" }}
+        <Text
+          fontWeight={getPageIndex == 1 ? "black" : "thin"}
+          fontSize="14px"
+          color={getPageIndex == 1 ? "#D74848" : "#474747"}
+          _dark={{
+            color: getPageIndex == 1 ? "#D74848" : "gray",
+          }}
           _hover={{
-            backgroundColor: "transparent",
-            cursor: "pointer",
+            color: "#D74848",
           }}
-          flexDirection={"row"}
-          whileTap={{
-            scale: 0.9,
-          }}
-          whileHover={{
-            scale: 1.1,
-            color: cl,
-          }}
-          onClick={null} //update this
         >
-          <Text
-            fontWeight={getPageIndex == 4 ? "black" : "thin"}
-            fontSize="14px"
-            color={getPageIndex == 4 ? "#22C086" : "#474747"}
-            _dark={{
-              color: getPageIndex == 4 ? "#22C086" : "gray",
-            }}
-            _hover={{
-              color: "#22C086",
-            }}
-          >
-            Join us
-          </Text>
-        </MotionButton>
-      </Link>
-      <Link
-        activeClass="active"
-        to="contact"
-        spy={true}
-        smooth={true}
-        offset={-48}
-        duration={1000}
+          Tools
+        </Text>
+      </MotionButton>
+      <MotionButton
+        backgroundColor={"transparent"}
+        _focus={{ border: "none" }}
+        _focusWithin={{ backgroundColor: "transparent" }}
+        _hover={{
+          backgroundColor: "transparent",
+          cursor: "pointer",
+        }}
+        flexDirection={"row"}
+        whileTap={{
+          scale: 0.9,
+        }}
+        whileHover={{
+          scale: 1.1,
+          color: cl,
+        }}
+        onClick={() => {
+          Router.push({
+            pathname: "/careers",
+          });
+        }}
       >
-        <MotionButton
-          backgroundColor={"transparent"}
-          _focus={{ border: "none" }}
-          _focusWithin={{ backgroundColor: "transparent" }}
+        <Text
+          fontWeight={getPageIndex == 1 ? "black" : "thin"}
+          fontSize="14px"
+          color={getPageIndex == 1 ? "#D74848" : "#474747"}
+          _dark={{
+            color: getPageIndex == 1 ? "#D74848" : "gray",
+          }}
           _hover={{
-            backgroundColor: "transparent",
-            cursor: "pointer",
+            color: "#D74848",
           }}
-          flexDirection={"row"}
-          whileTap={{
-            scale: 0.9,
-          }}
-          whileHover={{
-            scale: 1.1,
-            color: cl,
-          }}
-          onClick={null} //update this
         >
-          <Text
-            fontWeight={getPageIndex == 5 ? "black" : "thin"}
-            fontSize="14px"
-            color={getPageIndex == 5 ? "#22C086" : "#474747"}
-            _dark={{
-              color: getPageIndex == 5 ? "#22C086" : "gray",
-            }}
-            _hover={{
-              color: "#22C086",
-            }}
-          >
-            Understanding Poverty
-          </Text>
-        </MotionButton>
-      </Link>
+          Careers
+        </Text>
+      </MotionButton>
+      <MotionButton
+        backgroundColor={"transparent"}
+        _focus={{ border: "none" }}
+        _focusWithin={{ backgroundColor: "transparent" }}
+        _hover={{
+          backgroundColor: "transparent",
+          cursor: "pointer",
+        }}
+        flexDirection={"row"}
+        whileTap={{
+          scale: 0.9,
+        }}
+        whileHover={{
+          scale: 1.1,
+          color: cl,
+        }}
+        onClick={() => {
+          Router.push({
+            pathname: "/start_your_project",
+          });
+        }}
+      >
+        <Text
+          fontWeight={getPageIndex == 1 ? "black" : "thin"}
+          fontSize="14px"
+          color={getPageIndex == 1 ? "#D74848" : "#474747"}
+          _dark={{
+            color: getPageIndex == 1 ? "#D74848" : "gray",
+          }}
+          _hover={{
+            color: "#D74848",
+          }}
+        >
+          Start your project
+        </Text>
+      </MotionButton>
       <CloseButton
         aria-label="Close menu"
         justifySelf="self-start"
@@ -308,8 +251,8 @@ export default function NavigationBar() {
         <chakra.header
           ref={ref}
           position={"absolute"}
-          right={["0px", "10px", "75px", "75px", "0px", "0px"]}
-          left={["10px", "10px", "75px", "75px", "75px", "75px"]}
+          right={["0px", "10px", "75px", "75px", "0px", "80px"]}
+          left={["10px", "10px", "75px", "75px", "75px", "100px"]}
           padding="6"
           zIndex={2}
         >
@@ -317,9 +260,9 @@ export default function NavigationBar() {
             <Link display="flex" alignItems="center" href="/">
               <Box
                 height={["30px", "45px", "45px", "45px", "45px", "45px"]}
-                width={["150px", "220px", "220px", "220px", "220px", "220px"]}
+                width={["100px", "120px", "120px", "120px", "150px", "150px"]}
               >
-                <Image src={klogoMode} draggable="false" alt="gsdb icon png" />
+                <Image src={klogoMode} draggable="false" alt="ms icon png" />
               </Box>
             </Link>
             <Spacer />
@@ -349,108 +292,24 @@ export default function NavigationBar() {
                 }}
                 onClick={() => {
                   Router.push({
-                    pathname: "/about_us",
+                    pathname: "/home",
                   });
                 }}
               >
                 <Text
                   fontWeight={getPageIndex == 1 ? "black" : "thin"}
                   fontSize="14px"
-                  color={getPageIndex == 1 ? "#22C086" : "#474747"}
+                  color={getPageIndex == 1 ? "#D74848" : "#474747"}
                   _dark={{
-                    color: getPageIndex == 1 ? "#22C086" : "gray",
+                    color: getPageIndex == 1 ? "#D74848" : "gray",
                   }}
                   _hover={{
-                    color: "#22C086",
+                    color: "#D74848",
                   }}
                 >
-                  About us
+                  Home
                 </Text>
               </MotionButton>
-
-              <Link
-                activeClass="active"
-                to="ourgoal"
-                spy={true}
-                smooth={true}
-                offset={-50}
-                duration={1000}
-              >
-                <MotionButton
-                  backgroundColor={"transparent"}
-                  _focus={{ border: "none" }}
-                  _focusWithin={{ backgroundColor: "transparent" }}
-                  _hover={{
-                    backgroundColor: "transparent",
-                    cursor: "pointer",
-                  }}
-                  flexDirection={"row"}
-                  whileTap={{
-                    scale: 0.9,
-                  }}
-                  whileHover={{
-                    scale: 1.1,
-                    color: cl,
-                  }}
-                  onClick={null} //update this
-                >
-                  <Text
-                    fontWeight={getPageIndex == 2 ? "black" : "thin"}
-                    fontSize="14px"
-                    color={getPageIndex == 2 ? "#22C086" : "#474747"}
-                    _dark={{
-                      color: getPageIndex == 2 ? "#22C086" : "gray",
-                    }}
-                    _hover={{
-                      color: "#22C086",
-                    }}
-                  >
-                    Our goals
-                  </Text>
-                </MotionButton>
-              </Link>
-              <Link
-                activeClass="active"
-                to="workwithus"
-                spy={true}
-                smooth={true}
-                offset={-180}
-                duration={1000}
-              >
-                <MotionButton
-                  backgroundColor={"transparent"}
-                  _focus={{ border: "none" }}
-                  _focusWithin={{ backgroundColor: "transparent" }}
-                  _hover={{
-                    backgroundColor: "transparent",
-                    cursor: "pointer",
-                  }}
-                  flexDirection={"row"}
-                  whileTap={{
-                    scale: 0.9,
-                  }}
-                  whileHover={{
-                    scale: 1.1,
-                    color: cl,
-                  }}
-                  onClick={null} //update this
-                >
-                  <Text
-                    fontWeight={getPageIndex == 3 ? "black" : "thin"}
-                    fontSize="14px"
-                    color={getPageIndex == 3 ? "#22C086" : "#474747"}
-                    _dark={{
-                      color: getPageIndex == 3 ? "#22C086" : "gray",
-                    }}
-                    _hover={{
-                      color: "#22C086",
-                    }}
-                  >
-                    Work with us
-                  </Text>
-                </MotionButton>
-              </Link>
-
               <MotionButton
                 backgroundColor={"transparent"}
                 _focus={{ border: "none" }}
@@ -469,97 +328,125 @@ export default function NavigationBar() {
                 }}
                 onClick={() => {
                   Router.push({
-                    pathname: "/news",
+                    pathname: "/services",
                   });
                 }}
               >
                 <Text
-                  fontWeight={getPageIndex == 2 ? "black" : "thin"}
+                  fontWeight={getPageIndex == 1 ? "black" : "thin"}
                   fontSize="14px"
-                  color={getPageIndex == 2 ? "#22C086" : "#474747"}
+                  color={getPageIndex == 1 ? "#D74848" : "#474747"}
                   _dark={{
-                    color: getPageIndex == 2 ? "#22C086" : "gray",
+                    color: getPageIndex == 1 ? "#D74848" : "gray",
                   }}
                   _hover={{
-                    color: "#22C086",
+                    color: "#D74848",
                   }}
                 >
-                  News
+                  Services
                 </Text>
               </MotionButton>
+              <MotionButton
+                backgroundColor={"transparent"}
+                _focus={{ border: "none" }}
+                _focusWithin={{ backgroundColor: "transparent" }}
+                _hover={{
+                  backgroundColor: "transparent",
+                  cursor: "pointer",
+                }}
+                flexDirection={"row"}
+                whileTap={{
+                  scale: 0.9,
+                }}
+                whileHover={{
+                  scale: 1.1,
+                  color: cl,
+                }}
+                onClick={() => {
+                  Router.push({
+                    pathname: "/tools",
+                  });
+                }}
+              >
+                <Text
+                  fontWeight={getPageIndex == 1 ? "black" : "thin"}
+                  fontSize="14px"
+                  color={getPageIndex == 1 ? "#D74848" : "#474747"}
+                  _dark={{
+                    color: getPageIndex == 1 ? "#D74848" : "gray",
+                  }}
+                  _hover={{
+                    color: "#D74848",
+                  }}
+                >
+                  Tools
+                </Text>
+              </MotionButton>
+              <MotionButton
+                backgroundColor={"transparent"}
+                _focus={{ border: "none" }}
+                _focusWithin={{ backgroundColor: "transparent" }}
+                _hover={{
+                  backgroundColor: "transparent",
+                  cursor: "pointer",
+                }}
+                flexDirection={"row"}
+                whileTap={{
+                  scale: 0.9,
+                }}
+                whileHover={{
+                  scale: 1.1,
+                  color: cl,
+                }}
+                onClick={() => {
+                  Router.push({
+                    pathname: "/careers",
+                  });
+                }}
+              >
+                <Text
+                  fontWeight={getPageIndex == 1 ? "black" : "thin"}
+                  fontSize="14px"
+                  color={getPageIndex == 1 ? "#D74848" : "#474747"}
+                  _dark={{
+                    color: getPageIndex == 1 ? "#D74848" : "gray",
+                  }}
+                  _hover={{
+                    color: "#D74848",
+                  }}
+                >
+                  Careers
+                </Text>
+              </MotionButton>
+              <MotionButton
+                py={"22px"}
+                backgroundColor={"#D74848"}
+                _focus={{ border: "none" }}
+                _focusWithin={{ backgroundColor: "#D74848" }}
+                _hover={{
+                  backgroundColor: "#D74848",
+                  cursor: "pointer",
+                }}
+                flexDirection={"row"}
+                whileTap={{
+                  scale: 0.9,
+                }}
+                whileHover={{
+                  scale: 1.1,
+                  color: cl,
+                }}
+                onClick={() => {
+                  Router.push({
+                    pathname: "/start_your_project",
+                  });
+                }}
+              >
+                <IoIosRocket size={"20px"} color={"white"} />
 
-              <Link
-                activeClass="active"
-                to="tools"
-                spy={true}
-                smooth={true}
-                offset={-130}
-                duration={1000}
-              >
-                <MotionButton
-                  backgroundColor={"transparent"}
-                  _focus={{ border: "none" }}
-                  _focusWithin={{ backgroundColor: "transparent" }}
-                  _hover={{
-                    backgroundColor: "transparent",
-                    cursor: "pointer",
-                  }}
-                  flexDirection={"row"}
-                  whileTap={{
-                    scale: 0.9,
-                  }}
-                  whileHover={{
-                    scale: 1.1,
-                    color: cl,
-                  }}
-                  onClick={null} //update this
-                >
-                  <Text
-                    fontWeight={getPageIndex == 4 ? "black" : "thin"}
-                    fontSize="14px"
-                    color={getPageIndex == 4 ? "#22C086" : "#474747"}
-                    _dark={{
-                      color: getPageIndex == 4 ? "#22C086" : "gray",
-                    }}
-                    _hover={{
-                      color: "#22C086",
-                    }}
-                  >
-                    Join us
-                  </Text>
-                </MotionButton>
-              </Link>
-              <Link
-                activeClass="active"
-                to="contact"
-                spy={true}
-                smooth={true}
-                offset={-48}
-                duration={1000}
-              >
-                <MotionButton
-                  backgroundColor={"#22C086"}
-                  _focus={{ border: "none" }}
-                  _focusWithin={{ backgroundColor: "#22C086" }}
-                  _hover={{
-                    backgroundColor: "#22C086",
-                    cursor: "pointer",
-                  }}
-                  flexDirection={"row"}
-                  whileTap={{
-                    scale: 0.9,
-                  }}
-                  whileHover={{
-                    scale: 1.1,
-                    color: cl,
-                  }}
-                  onClick={null} //update this
-                >
-                  <Text fontSize="14px" color={"white"}>
-                    Understanding Poverty
-                  </Text>
-                </MotionButton>
-              </Link>
+                <Text fontSize="14px" color={"white"} pl={"10px"}>
+                  Start your project
+                </Text>
+              </MotionButton>
             </HStack>
 
             <Box display="flex" alignItems="center" ml={"20px"}>

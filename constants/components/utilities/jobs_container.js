@@ -16,7 +16,7 @@ import { MotionFlex, MotionButton } from "../motion";
 
 import { useWindowSize } from "../../../custom_hooks";
 
-const ServicesContainer = (props) => {
+const JobsContainer = (props) => {
   const { height, width } = useWindowSize();
   const { data, dataIndex } = props;
   const { title, icon, subTitle, description, routeURL } = data[dataIndex];
@@ -26,18 +26,9 @@ const ServicesContainer = (props) => {
       width={["280px", "280px", "280px", "280px", "360px", "450px"]}
       justifyContent={"start"}
       alignItems={"start"}
-      px={"30px"}
-      py={"30px"}
-      backgroundColor={"#16365F"}
       borderRadius={"20px"}
-      style={{
-        boxShadow: `0px 0px 30px rgba(0, 0, 0, 0.05) `,
-      }}
     >
       <VStack alignItems={"start"} spacing={"20px"}>
-        <Box w={["25%", "25%", "25%", "25%", "25%", "25%"]}>
-          <Image src={icon} alt="ms" />
-        </Box>
         <VStack alignItems={"start"} spacing={"15px"}>
           <VStack alignItems={"start"} spacing={"-5px"}>
             <chakra.h3
@@ -53,23 +44,10 @@ const ServicesContainer = (props) => {
             >
               {title}
             </chakra.h3>
-            <chakra.h3
-              fontFamily={"Poppins.black"}
-              fontSize={["18px", "20px", "20px", "20px", "16px", "16px"]}
-              fontWeight="thinss"
-              letterSpacing={{
-                base: "normal",
-                md: "normal",
-              }}
-              color="#FFFFFF"
-              whiteSpace={["normal", "normal", "pre-line", "pre-line"]}
-            >
-              {subTitle}
-            </chakra.h3>
           </VStack>
           <chakra.p
             fontSize={["14px", "14px", "15px", "15px", "12px", "12px"]}
-            color="white"
+            color="#16365F"
             whiteSpace={["normal", "normal", "pre-line", "pre-line"]}
             fontFamily={"Poppins"}
           >
@@ -99,10 +77,10 @@ const ServicesContainer = (props) => {
                 });
               }}
             >
-              <Text fontSize="14px" fontWeight={"thin"} color={"white"}>
+              <Text fontSize="14px" fontWeight={"thin"} color={"#D74848"}>
                 See More
               </Text>
-              <BiChevronRight size={"20px"} color={"white"} />
+              <BiChevronRight size={"20px"} color={"#D74848"} />
             </MotionButton>
           </Flex>
         </VStack>
@@ -111,4 +89,4 @@ const ServicesContainer = (props) => {
   );
 };
 
-export default ServicesContainer;
+export default JobsContainer;

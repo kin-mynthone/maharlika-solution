@@ -134,7 +134,7 @@ export default function Footer() {
               </chakra.p>
             </VStack>
 
-            <VStack alignItems={"start"} spacing={"10px"}>
+            <VStack alignItems={"start"} spacing={"10px"} id={"contact_us"}>
               <chakra.h3
                 fontFamily={"Poppins.black"}
                 fontSize={["15px", "18px", "18px", "18px", "18px", "18px"]}
@@ -188,7 +188,6 @@ export default function Footer() {
             >
               <VStack alignItems={"start"}>
                 <Text
-                  as={"button"}
                   color={"white"}
                   fontSize={["14px", "142px", "15px", "15px", "15px", "15px"]}
                   fontWeight={"black"}
@@ -209,6 +208,11 @@ export default function Footer() {
                     color="rgba(255, 255, 255, 0.8) "
                     fontSize={["12px", "12px", "13px", "13px", "13px", "13px"]}
                     fontWeight={"thin"}
+                    onClick={() => {
+                      Router.push({
+                        pathname: "/services/commercial",
+                      });
+                    }}
                   >
                     Commercial
                   </Text>
@@ -217,6 +221,11 @@ export default function Footer() {
                     color="rgba(255, 255, 255, 0.8) "
                     fontSize={["12px", "12px", "13px", "13px", "13px", "13px"]}
                     fontWeight={"thin"}
+                    onClick={() => {
+                      Router.push({
+                        pathname: "/services/technical",
+                      });
+                    }}
                   >
                     Technical
                   </Text>
@@ -225,12 +234,17 @@ export default function Footer() {
                     color="rgba(255, 255, 255, 0.8) "
                     fontSize={["12px", "12px", "13px", "13px", "13px", "13px"]}
                     fontWeight={"thin"}
+                    onClick={() => {
+                      Router.push({
+                        pathname: "/services/creative",
+                      });
+                    }}
                   >
                     Creative
                   </Text>
                 </SimpleGrid>
               </VStack>
-              <VStack alignItems={"start"}>
+              {/* <VStack alignItems={"start"}>
                 <Text
                   as={"button"}
                   color={"white"}
@@ -265,10 +279,9 @@ export default function Footer() {
                     Designs
                   </Text>
                 </SimpleGrid>
-              </VStack>
+              </VStack> */}
               <VStack alignItems={"start"}>
                 <Text
-                  as={"button"}
                   color={"white"}
                   fontSize={["14px", "142px", "15px", "15px", "15px", "15px"]}
                   fontWeight={"black"}
@@ -289,6 +302,11 @@ export default function Footer() {
                     color="rgba(255, 255, 255, 0.8) "
                     fontSize={["12px", "12px", "13px", "13px", "13px", "13px"]}
                     fontWeight={"thin"}
+                    onClick={() => {
+                      Router.push({
+                        pathname: "/careers",
+                      });
+                    }}
                   >
                     Technical Jobs
                   </Text>
@@ -297,6 +315,11 @@ export default function Footer() {
                     color="rgba(255, 255, 255, 0.8) "
                     fontSize={["12px", "12px", "13px", "13px", "13px", "13px"]}
                     fontWeight={"thin"}
+                    onClick={() => {
+                      Router.push({
+                        pathname: "/careers",
+                      });
+                    }}
                   >
                     Creative Jobs
                   </Text>
@@ -305,6 +328,11 @@ export default function Footer() {
                     color="rgba(255, 255, 255, 0.8) "
                     fontSize={["12px", "12px", "13px", "13px", "13px", "13px"]}
                     fontWeight={"thin"}
+                    onClick={() => {
+                      Router.push({
+                        pathname: "/careers",
+                      });
+                    }}
                   >
                     Admin
                   </Text>
@@ -484,7 +512,7 @@ export default function Footer() {
                   </MotionButton>
                 </HStack>
               </VStack>
-              <VStack spacing={1} alignItems={"start"}>
+              {/* <VStack spacing={1} alignItems={"start"}>
                 <Text
                   pb={"10px"}
                   fontSize={["14px", "142px", "15px", "15px", "15px", "15px"]}
@@ -521,7 +549,7 @@ export default function Footer() {
                   </Text>
                   <BsArrowRightShort size={"30px"} color={"white"} />
                 </MotionButton>
-              </VStack>
+              </VStack> */}
             </SimpleGrid>
           </Flex>
         </VStack>

@@ -16,7 +16,7 @@ import { MotionFlex, MotionButton } from "../motion";
 
 import { useWindowSize } from "../../../custom_hooks";
 
-const ServicesContainer = (props) => {
+const ServicesContainerPlain = (props) => {
   const { height, width } = useWindowSize();
   const { data, dataIndex } = props;
   const { title, icon, subTitle, description, routeURL } = data[dataIndex];
@@ -26,13 +26,6 @@ const ServicesContainer = (props) => {
       width={["280px", "280px", "280px", "280px", "360px", "450px"]}
       justifyContent={"start"}
       alignItems={"start"}
-      px={"30px"}
-      py={"30px"}
-      backgroundColor={"#16365F"}
-      borderRadius={"20px"}
-      style={{
-        boxShadow: `0px 0px 30px rgba(0, 0, 0, 0.05) `,
-      }}
     >
       <VStack alignItems={"start"} spacing={"20px"}>
         <Box w={["25%", "25%", "25%", "25%", "25%", "25%"]}>
@@ -61,7 +54,7 @@ const ServicesContainer = (props) => {
                 base: "normal",
                 md: "normal",
               }}
-              color="#FFFFFF"
+              color="#16365F"
               whiteSpace={["normal", "normal", "pre-line", "pre-line"]}
             >
               {subTitle}
@@ -69,46 +62,16 @@ const ServicesContainer = (props) => {
           </VStack>
           <chakra.p
             fontSize={["14px", "14px", "15px", "15px", "12px", "12px"]}
-            color="white"
+            color="#16365F"
             whiteSpace={["normal", "normal", "pre-line", "pre-line"]}
             fontFamily={"Poppins"}
           >
             {description}
           </chakra.p>
-
-          <Flex w={"full"} justifyContent={"end"}>
-            <MotionButton
-              size={"xxs"}
-              backgroundColor={"transparent"}
-              _focus={{ border: "none" }}
-              _focusWithin={{ backgroundColor: "transparent" }}
-              _hover={{
-                backgroundColor: "transparent",
-                cursor: "pointer",
-              }}
-              whileTap={{
-                scale: 1,
-              }}
-              whileHover={{
-                scale: 1.1,
-              }}
-              flexDirection={"row"}
-              onClick={() => {
-                Router.push({
-                  pathname: routeURL,
-                });
-              }}
-            >
-              <Text fontSize="14px" fontWeight={"thin"} color={"white"}>
-                See More
-              </Text>
-              <BiChevronRight size={"20px"} color={"white"} />
-            </MotionButton>
-          </Flex>
         </VStack>
       </VStack>
     </Box>
   );
 };
 
-export default ServicesContainer;
+export default ServicesContainerPlain;

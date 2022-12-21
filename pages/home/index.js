@@ -18,7 +18,7 @@ import { IoIosRocket } from "react-icons/io";
 
 import { MotionButton, MotionFlex } from "../../constants/components/motion";
 import { chakra } from "@chakra-ui/react";
-
+import { Link } from "react-scroll/modules";
 import { startUpStore } from "../../store/start_up";
 import { useState, useEffect } from "react";
 import { cta_image, nl_image, growth } from "../../constants/data";
@@ -158,87 +158,96 @@ export default function Home() {
                   transform and scale up your organization.
                 </Text>
                 <HStack spacing={[5, 9, 9, 9, 5, 5]}>
-                  <MotionButton
-                    py={"25px"}
-                    backgroundColor={"#D74848"}
-                    border="1px"
-                    // style={{
-                    //   boxShadow: `0px 0px 30px #D74848`,
-                    // }}
-                    borderColor="#D74848"
-                    _focus={{ borderColor: "#D74848" }}
-                    _focusWithin={{
-                      backgroundColor: "#D74848",
-                      borderColor: "#D74848",
-                    }}
-                    _hover={{
-                      backgroundColor: "#D74848",
-                      borderColor: "#D74848",
-                    }}
-                    borderRadius={10}
-                    whileTap={{
-                      scale: 1,
-                    }}
-                    whileHover={{
-                      scale: 1.1,
-                    }}
-                    onClick={() => {}}
+                  <Link
+                    activeClass="active"
+                    to="contact_us"
+                    spy={true}
+                    smooth={true}
+                    offset={-130}
+                    duration={1000}
                   >
-                    <IoIosRocket size={"20px"} color={"white"} />
+                    <MotionButton
+                      py={"25px"}
+                      backgroundColor={"#D74848"}
+                      border="1px"
+                      // style={{
+                      //   boxShadow: `0px 0px 30px #D74848`,
+                      // }}
+                      borderColor="#D74848"
+                      _focus={{ borderColor: "#D74848" }}
+                      _focusWithin={{
+                        backgroundColor: "#D74848",
+                        borderColor: "#D74848",
+                      }}
+                      _hover={{
+                        backgroundColor: "#D74848",
+                        borderColor: "#D74848",
+                      }}
+                      borderRadius={10}
+                      whileTap={{
+                        scale: 1,
+                      }}
+                      whileHover={{
+                        scale: 1.1,
+                      }}
+                      onClick={() => {}}
+                    >
+                      <IoIosRocket size={"20px"} color={"white"} />
 
-                    <Text
-                      fontSize={[
-                        "12px",
-                        "12px",
-                        "12px",
-                        "12px",
-                        "15px",
-                        "15px",
-                      ]}
-                      color={"white"}
-                      pl={"10px"}
+                      <Text
+                        fontSize={[
+                          "12px",
+                          "12px",
+                          "12px",
+                          "12px",
+                          "15px",
+                          "15px",
+                        ]}
+                        color={"white"}
+                        pl={"10px"}
+                      >
+                        Start your project
+                      </Text>
+                    </MotionButton>
+                  </Link>
+                  {/* <MotionButton
+                      py={"25px"}
+                      px={"30px"}
+                      backgroundColor={"transparent"}
+                      border="1px"
+                      borderColor="#D74848"
+                      _focus={{ borderColor: "#D74848" }}
+                      _focusWithin={{
+                        backgroundColor: "transparent",
+                        borderColor: "#D74848",
+                      }}
+                      _hover={{
+                        backgroundColor: "transparent",
+                        borderColor: "#D74848",
+                      }}
+                      borderRadius={10}
+                      whileTap={{
+                        scale: 1,
+                      }}
+                      whileHover={{
+                        scale: 1.1,
+                      }}
+                      onClick={() => {}}
                     >
-                      Start your project
-                    </Text>
-                  </MotionButton>
-                  <MotionButton
-                    py={"25px"}
-                    px={"30px"}
-                    backgroundColor={"transparent"}
-                    border="1px"
-                    borderColor="#D74848"
-                    _focus={{ borderColor: "#D74848" }}
-                    _focusWithin={{
-                      backgroundColor: "transparent",
-                      borderColor: "#D74848",
-                    }}
-                    _hover={{
-                      backgroundColor: "transparent",
-                      borderColor: "#D74848",
-                    }}
-                    borderRadius={10}
-                    whileTap={{
-                      scale: 1,
-                    }}
-                    whileHover={{
-                      scale: 1.1,
-                    }}
-                    onClick={() => {}}
-                  >
-                    <Text
-                      fontSize={[
-                        "12px",
-                        "12px",
-                        "12px",
-                        "12px",
-                        "15px",
-                        "15px",
-                      ]}
-                      color={"#D74848"}
-                    >
-                      Get in Touch
-                    </Text>
-                  </MotionButton>
+                      <Text
+                        fontSize={[
+                          "12px",
+                          "12px",
+                          "12px",
+                          "12px",
+                          "15px",
+                          "15px",
+                        ]}
+                        color={"#D74848"}
+                      >
+                        Get in Touch
+                      </Text>
+                    </MotionButton> */}
                 </HStack>
               </VStack>
             </VStack>
@@ -498,6 +507,7 @@ export default function Home() {
       {
         title: "Commercial",
         icon: "commercial.svg",
+        routeURL: "/services/commercial",
         subTitle: "More revenue",
 
         description:
@@ -506,6 +516,7 @@ export default function Home() {
       {
         title: "Technical",
         icon: "technical.svg",
+        routeURL: "/services/technical",
         subTitle: "More efficiency",
 
         description:
@@ -514,6 +525,8 @@ export default function Home() {
       {
         title: "Creative",
         icon: "creative.svg",
+        routeURL: "/services/creative",
+
         subTitle: "More appeal",
 
         description:
@@ -709,7 +722,7 @@ export default function Home() {
                   position.
                 </Text>
 
-                <MotionButton
+                {/* <MotionButton
                   py={"25px"}
                   px={"25px"}
                   backgroundColor={"#D74848"}
@@ -745,7 +758,7 @@ export default function Home() {
                   >
                     Notify Us
                   </Text>
-                </MotionButton>
+                </MotionButton> */}
               </VStack>
             </VStack>
             <Spacer />
@@ -799,6 +812,7 @@ export default function Home() {
     const dummyData = [
       {
         title: "Creative",
+
         icon: "creative.svg",
 
         description:
@@ -885,7 +899,7 @@ export default function Home() {
                   about you
                 </Text>
 
-                <MotionButton
+                {/* <MotionButton
                   py={"25px"}
                   px={"25px"}
                   backgroundColor={"#D74848"}
@@ -915,11 +929,11 @@ export default function Home() {
                   <Text
                     fontSize={["12px", "12px", "12px", "12px", "15px", "15px"]}
                     color={"white"}
-                    pl={"10px"}
+                   
                   >
                     About Us
                   </Text>
-                </MotionButton>
+                </MotionButton> */}
               </VStack>
             </VStack>
 

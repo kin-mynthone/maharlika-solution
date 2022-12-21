@@ -130,7 +130,7 @@ export default function NavigationBar() {
           Services
         </Text>
       </MotionButton>
-      <MotionButton
+      {/* <MotionButton
         backgroundColor={"transparent"}
         _focus={{ border: "none" }}
         _focusWithin={{ backgroundColor: "transparent" }}
@@ -165,7 +165,7 @@ export default function NavigationBar() {
         >
           Tools
         </Text>
-      </MotionButton>
+      </MotionButton> */}
       <MotionButton
         backgroundColor={"transparent"}
         _focus={{ border: "none" }}
@@ -202,42 +202,51 @@ export default function NavigationBar() {
           Careers
         </Text>
       </MotionButton>
-      <MotionButton
-        backgroundColor={"transparent"}
-        _focus={{ border: "none" }}
-        _focusWithin={{ backgroundColor: "transparent" }}
-        _hover={{
-          backgroundColor: "transparent",
-          cursor: "pointer",
-        }}
-        flexDirection={"row"}
-        whileTap={{
-          scale: 0.9,
-        }}
-        whileHover={{
-          scale: 1.1,
-          color: cl,
-        }}
-        onClick={() => {
-          Router.push({
-            pathname: "/start_your_project",
-          });
-        }}
+      <Link
+        activeClass="active"
+        to="contact_us"
+        spy={true}
+        smooth={true}
+        offset={-130}
+        duration={1000}
       >
-        <Text
-          fontWeight={getPageIndex == 1 ? "black" : "thin"}
-          fontSize="14px"
-          color={getPageIndex == 1 ? "#D74848" : "#474747"}
-          _dark={{
-            color: getPageIndex == 1 ? "#D74848" : "gray",
-          }}
+        <MotionButton
+          backgroundColor={"transparent"}
+          _focus={{ border: "none" }}
+          _focusWithin={{ backgroundColor: "transparent" }}
           _hover={{
-            color: "#D74848",
+            backgroundColor: "transparent",
+            cursor: "pointer",
           }}
+          flexDirection={"row"}
+          whileTap={{
+            scale: 0.9,
+          }}
+          whileHover={{
+            scale: 1.1,
+            color: cl,
+          }}
+          // onClick={() => {
+          //   Router.push({
+          //     pathname: "/start_your_project",
+          //   });
+          // }}
         >
-          Start your project
-        </Text>
-      </MotionButton>
+          <Text
+            fontWeight={getPageIndex == 1 ? "black" : "thin"}
+            fontSize="14px"
+            color={getPageIndex == 1 ? "#D74848" : "#474747"}
+            _dark={{
+              color: getPageIndex == 1 ? "#D74848" : "gray",
+            }}
+            _hover={{
+              color: "#D74848",
+            }}
+          >
+            Start your project
+          </Text>
+        </MotionButton>
+      </Link>
       <CloseButton
         aria-label="Close menu"
         justifySelf="self-start"
@@ -262,7 +271,16 @@ export default function NavigationBar() {
                 height={["30px", "45px", "45px", "45px", "45px", "45px"]}
                 width={["100px", "120px", "120px", "120px", "150px", "150px"]}
               >
-                <Image src={klogoMode} draggable="false" alt="ms icon png" />
+                <Image
+                  src={klogoMode}
+                  draggable="false"
+                  alt="ms icon png"
+                  onClick={() => {
+                    Router.push({
+                      pathname: "/home",
+                    });
+                  }}
+                />
               </Box>
             </Link>
             <Spacer />
@@ -328,7 +346,7 @@ export default function NavigationBar() {
                 }}
                 onClick={() => {
                   Router.push({
-                    pathname: "/services",
+                    pathname: "/services/commercial",
                   });
                 }}
               >
@@ -346,7 +364,7 @@ export default function NavigationBar() {
                   Services
                 </Text>
               </MotionButton>
-              <MotionButton
+              {/* <MotionButton
                 backgroundColor={"transparent"}
                 _focus={{ border: "none" }}
                 _focusWithin={{ backgroundColor: "transparent" }}
@@ -381,7 +399,7 @@ export default function NavigationBar() {
                 >
                   Tools
                 </Text>
-              </MotionButton>
+              </MotionButton> */}
               <MotionButton
                 backgroundColor={"transparent"}
                 _focus={{ border: "none" }}
@@ -418,35 +436,44 @@ export default function NavigationBar() {
                   Careers
                 </Text>
               </MotionButton>
-              <MotionButton
-                py={"22px"}
-                backgroundColor={"#D74848"}
-                _focus={{ border: "none" }}
-                _focusWithin={{ backgroundColor: "#D74848" }}
-                _hover={{
-                  backgroundColor: "#D74848",
-                  cursor: "pointer",
-                }}
-                flexDirection={"row"}
-                whileTap={{
-                  scale: 0.9,
-                }}
-                whileHover={{
-                  scale: 1.1,
-                  color: cl,
-                }}
-                onClick={() => {
-                  Router.push({
-                    pathname: "/start_your_project",
-                  });
-                }}
+              <Link
+                activeClass="active"
+                to="contact_us"
+                spy={true}
+                smooth={true}
+                offset={-130}
+                duration={1000}
               >
-                <IoIosRocket size={"20px"} color={"white"} />
+                <MotionButton
+                  py={"22px"}
+                  backgroundColor={"#D74848"}
+                  _focus={{ border: "none" }}
+                  _focusWithin={{ backgroundColor: "#D74848" }}
+                  _hover={{
+                    backgroundColor: "#D74848",
+                    cursor: "pointer",
+                  }}
+                  flexDirection={"row"}
+                  whileTap={{
+                    scale: 0.9,
+                  }}
+                  whileHover={{
+                    scale: 1.1,
+                    color: cl,
+                  }}
+                  // onClick={() => {
+                  //   Router.push({
+                  //     pathname: "/start_your_project",
+                  //   });
+                  // }}
+                >
+                  <IoIosRocket size={"20px"} color={"white"} />
 
-                <Text fontSize="14px" color={"white"} pl={"10px"}>
-                  Start your project
-                </Text>
-              </MotionButton>
+                  <Text fontSize="14px" color={"white"} pl={"10px"}>
+                    Start your project
+                  </Text>
+                </MotionButton>
+              </Link>
             </HStack>
 
             <Box display="flex" alignItems="center" ml={"20px"}>
